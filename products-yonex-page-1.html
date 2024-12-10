@@ -9,7 +9,6 @@
 </head>
 
 <body>
-
     <header>
         <div class="header-container">
             <div class="logo-title">
@@ -20,10 +19,10 @@
                 <ul>
                     <li class="main-menu-item"><a href="Trangchu.html">Trang chủ</a></li>
                     <li class="main-menu-item">
-                        <a href="#products" class="menu-item"> Sản phẩm <i class="fa-solid fa-plus arrow" style="margin: 5px 5px 0 5px; font-size: 16px;"></i></a>
+                        <a href="#products" class="menu-item"> Sản phẩm <i class="fa-solid fa-plus arrow" style="margin: 5px 5px 0 -2px; font-size: 12px;"></i></a>
                         <ul class="sub-menu">
                             <li>
-                                <a href="#">Vợt cầu lông <i class="fa-solid fa-plus arrow" style="margin: 5px 5px 0 5px; font-size: 16px;"></i></a>
+                                <a href="#">Vợt cầu lông <i class="fa-solid fa-plus arrow" style="margin: 5px 5px 5px; font-size: 12px;"></i></a>
                                 <ul class="sub-menu-child">
                                     <li><a href="products-yonex-page-1.html">Yonex</a></li>
                                     <li><a href="products-lining.html">Lining</a></li>
@@ -33,7 +32,7 @@
                             </li>    
 
                             <li>
-                                <a href="#">Giày cầu lông <i class="fa-solid fa-plus arrow" style="margin: 5px 5px 0 5px; font-size: 16px;"></i></a>
+                                <a href="#">Giày cầu lông <i class="fa-solid fa-plus arrow" style="margin: 5px 5px 0 5px; font-size: 12px;"></i></a>
                                 <ul class="sub-menu-child">
                                     <li><a href="shoes-yonex.html">Yonex</a></li>
                                     <li><a href="shoes-lining.html">Lining</a></li>
@@ -42,7 +41,7 @@
                                 </ul>
                             </li>
 
-                            <li><a href="#">Quả cầu lông <i class="fa-solid fa-plus arrow" style="margin: 5px 5px 0 5px; font-size: 16px;"></i></a>
+                            <li><a href="#">Quả cầu lông <i class="fa-solid fa-plus arrow" style="margin: 5px 5px 0 5px; font-size: 12px;"></i></a>
                                 <ul class="sub-menu-child">
                                     <li><a href="products-yonex-ball.html">Yonex</a></li>
                                     <li><a href="products-victor-ball.html">Victor</a></li>
@@ -61,7 +60,7 @@
 
             <div class="header-right">
                 <div id="cart-container">
-                    <div id="cart-icon">
+                    <div id="cart-icon" onclick="window.location.href='cart.html'" style="cursor: pointer;">
                         <i class="fa-solid fa-cart-shopping"></i>
                         <span id="cart-count">0</span>
                     </div>
@@ -90,6 +89,10 @@
         <div class="container">
             <!-- Phần filter-container -->
             <div class="filter-container">
+                <div class="no-results" style="display: none; color: black; font-weight: bold;">
+                    Không tìm thấy kết quả
+                </div>
+
                 <div class="filter-section">
                     <h3>CHỌN MỨC GIÁ</h3>
                     <label><input type="checkbox"> Giá dưới 500.000đ</label><br>
@@ -141,8 +144,6 @@
 
                 <button class="btn apply-filters">Áp dụng bộ lọc</button>
             </div>
-
-            <!-- Nội dung sản phẩm -->
         
         <div class="products-list">
             <!-- Sản phẩm Yonex -->
@@ -151,7 +152,7 @@
                 <a href="products-detail.html" class="product-link" style="text-decoration: none;">
                     <img src="image/88d_2.webp" alt="Vợt cầu lông Yonex" class="product-image">
                     <h4 class="product-title">Vợt cầu lông Yonex Astrox 88D Pro</h4>
-                    <p>Giá: 4,000,000 VND</p>
+                    <p>Giá: 4.000.000 VND</p>
                 </a>
             </div>
 
@@ -159,7 +160,7 @@
                 <a href="" class="product-link" style="text-decoration: none;">
                     <img src="image/nnf800.jpg" alt="Vợt cầu lông Yonex" class="product-image">
                     <h4 class="product-title">Vợt cầu lông Yonex Nanoflare 800</h4>
-                    <p>Giá: 3,500,000 VND</p>
+                    <p>Giá: 300.000 VND</p>
                 </a>
             </div>
 
@@ -167,7 +168,7 @@
                 <a href="" class="product-link" style="text-decoration: none;">
                     <img src="image/arc11pro.jpg" alt="Vợt cầu lông Yonex" class="product-image">
                     <h4 class="product-title">Vợt cầu lông Yonex Arcsaber 11 Pro</h4>
-                    <p>Giá: 4,300,000 VND</p>
+                    <p>Giá: 700.000 VND</p>
                 </a>
             </div>
 
@@ -175,7 +176,7 @@
                 <a href="" class="product-link" style="text-decoration: none;">
                     <img src="image/duorazstrike.jpg" alt="Vợt cầu lông Yonex" class="product-image">
                     <h4 class="product-title">Vợt cầu lông Yonex Duora Z-Strike</h4>
-                    <p>Giá: 3,380,000 VND</p>
+                    <p>Giá: 1.580.000 VND</p>
                 </a>
             </div>
 
@@ -183,7 +184,7 @@
                 <a href="" class="product-link" style="text-decoration: none;">
                     <img src="image/duorazstrike.jpg" alt="Vợt cầu lông Yonex" class="product-image">
                     <h4 class="product-title">Vợt cầu lông Yonex Duora Z-Strike</h4>
-                    <p>Giá: 3,380,000 VND</p>
+                    <p>Giá: 2.780.000 VND</p>
                 </a>
             </div>
 
@@ -191,7 +192,7 @@
                 <a href="" class="product-link" style="text-decoration: none;">
                     <img src="image/duorazstrike.jpg" alt="Vợt cầu lông Yonex" class="product-image">
                     <h4 class="product-title">Vợt cầu lông Yonex Duora Z-Strike</h4>
-                    <p>Giá: 3,380,000 VND</p>
+                    <p>Giá: 3.380.000 VND</p>
                 </a>
             </div>
 
@@ -199,7 +200,7 @@
                 <a href="" class="product-link" style="text-decoration: none;">
                     <img src="image/duorazstrike.jpg" alt="Vợt cầu lông Yonex" class="product-image">
                     <h4 class="product-title">Vợt cầu lông Yonex Duora Z-Strike</h4>
-                    <p>Giá: 3,380,000 VND</p>
+                    <p>Giá: 3.380.000 VND</p>
                 </a>
             </div>
 
@@ -207,7 +208,7 @@
                 <a href="" class="product-link" style="text-decoration: none;">
                     <img src="image/duorazstrike.jpg" alt="Vợt cầu lông Yonex" class="product-image">
                     <h4 class="product-title">Vợt cầu lông Yonex Duora Z-Strike</h4>
-                    <p>Giá: 3,380,000 VND</p>
+                    <p>Giá: 3.380.000 VND</p>
                 </a>
             </div>
 
@@ -215,7 +216,7 @@
                 <a href="" class="product-link" style="text-decoration: none;">
                     <img src="image/duorazstrike.jpg" alt="Vợt cầu lông Yonex" class="product-image">
                     <h4 class="product-title">Vợt cầu lông Yonex Duora Z-Strike</h4>
-                    <p>Giá: 3,380,000 VND</p>
+                    <p>Giá: 3.380.000 VND</p>
                 </a>
             </div>
 
@@ -223,7 +224,7 @@
                 <a href="" class="product-link" style="text-decoration: none;">
                     <img src="image/duorazstrike.jpg" alt="Vợt cầu lông Yonex" class="product-image">
                     <h4 class="product-title">Vợt cầu lông Yonex Duora Z-Strike</h4>
-                    <p>Giá: 3,380,000 VND</p>
+                    <p>Giá: 3.380.000 VND</p>
                 </a>
             </div>
 
@@ -231,7 +232,7 @@
                 <a href="" class="product-link" style="text-decoration: none;">
                     <img src="image/duorazstrike.jpg" alt="Vợt cầu lông Yonex" class="product-image">
                     <h4 class="product-title">Vợt cầu lông Yonex Duora Z-Strike</h4>
-                    <p>Giá: 3,380,000 VND</p>
+                    <p>Giá: 3.380.000 VND</p>
                 </a>
             </div>
 
@@ -239,7 +240,7 @@
                 <a href="" class="product-link" style="text-decoration: none;">
                     <img src="image/duorazstrike.jpg" alt="Vợt cầu lông Yonex" class="product-image">
                     <h4 class="product-title">Vợt cầu lông Yonex Duora Z-Strike</h4>
-                    <p>Giá: 3,380,000 VND</p>
+                    <p>Giá: 3.380.000 VND</p>
                 </a>
             </div>
 
@@ -247,7 +248,7 @@
                 <a href="" class="product-link" style="text-decoration: none;">
                     <img src="image/duorazstrike.jpg" alt="Vợt cầu lông Yonex" class="product-image">
                     <h4 class="product-title">Vợt cầu lông Yonex Duora Z-Strike</h4>
-                    <p>Giá: 3,380,000 VND</p>
+                    <p>Giá: 3.380.000 VND</p>
                 </a>
             </div>
 
@@ -255,7 +256,7 @@
                 <a href="" class="product-link" style="text-decoration: none;">
                     <img src="image/duorazstrike.jpg" alt="Vợt cầu lông Yonex" class="product-image">
                     <h4 class="product-title">Vợt cầu lông Yonex Duora Z-Strike</h4>
-                    <p>Giá: 3,380,000 VND</p>
+                    <p>Giá: 3.380.000 VND</p>
                 </a>
             </div>
 
@@ -263,7 +264,7 @@
                 <a href="" class="product-link" style="text-decoration: none;">
                     <img src="image/duorazstrike.jpg" alt="Vợt cầu lông Yonex" class="product-image">
                     <h4 class="product-title">Vợt cầu lông Yonex Duora Z-Strike</h4>
-                    <p>Giá: 3,380,000 VND</p>
+                    <p>Giá: 3.380.000 VND</p>
                 </a>
             </div>
 
@@ -271,7 +272,7 @@
                 <a href="" class="product-link" style="text-decoration: none;">
                     <img src="image/duorazstrike.jpg" alt="Vợt cầu lông Yonex" class="product-image">
                     <h4 class="product-title">Vợt cầu lông Yonex Duora Z-Strike</h4>
-                    <p>Giá: 3,380,000 VND</p>
+                    <p>Giá: 3.380.000 VND</p>
                 </a>
             </div>
         </div>
@@ -292,6 +293,7 @@
     <script src="js/Trangchu.js"></script>
     <script src="https://kit.fontawesome.com/dc2acc0315.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="js/products.js"></script>
 </body>
 
 </html>

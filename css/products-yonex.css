@@ -467,14 +467,20 @@ section#product {
 }
 
 .filter-container {
-    width: 900px;
-    padding: 20px;
-    background-color: #f9f9f9;
+    width: 100%;
+    height: auto;
+    max-height: auto;
+    overflow-y: auto;
+    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     margin-right: 15px;
-    position: sticky;
-    top: 10px;
+    box-sizing: border-box;
+}
+
+.no-results {
+    text-align: center;
+    align-items: center;
 }
 
 .filter-section label {
@@ -552,4 +558,21 @@ footer {
 a:hover .arrow,
 a:focus-within .arrow {
     transform: rotate(45deg);
+}
+
+.apply-filters {
+    background-color: #333;
+    color: white; 
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px; 
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.apply-filters:hover {
+    background-color: #555;
+    transform: scale(0.95);
 }

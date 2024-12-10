@@ -1,57 +1,60 @@
-// products.js
+document.querySelector('.apply-filters').addEventListener('click', function() {
+    const products = document.querySelectorAll('.product');
+    
+    // Lấy các giá trị từ các checkbox
+    const priceFilters = Array.from(document.querySelectorAll('.filter-section:nth-child(1) input:checked')).map(checkbox => checkbox.value);
+    const brandFilters = Array.from(document.querySelectorAll('.filter-section:nth-child(2) input:checked')).map(checkbox => checkbox.value);
+    
+    let anyProductVisible = false; // Biến để kiểm tra có sản phẩm nào hiển thị
 
-// Lấy các sản phẩm từ trang
-const products = [
-    {
-        name: "Yonex Astrox 88D Pro",
-        brand: "Yonex",
-        price: 4000000,
-        image: "image/yonex-astrox88.jpg",
-    },
-    {
-        name: "Lining Axforce 100",
-        brand: "Lining",
-        price: 3800000,
-        image: "image/axf100.jpg",
-    },
-    // Thêm các sản phẩm khác ở đây
-];
+    // Lọc sản phẩm
+    products.forEach(product => {
+        const productTitle = product.querySelector('.product-title').textContent; // Lấy tên sản phẩm
+        const productPriceText = product.querySelector('p').textContent; // Lấy giá sản phẩm
+        const productPrice = parseInt(productPriceText.replace(/\D/g, '')); // Chuyển đổi giá từ chuỗi sang số nguyên
+        
+        console.log(`Product Title: ${productTitle}, Product Price: ${productPrice}`); // Kiểm tra giá trị
 
-// Hàm lọc sản phẩm
-function filterProducts() {
-    const selectedBrands = Array.from(document.querySelectorAll('.filter-container input[type="checkbox"]:checked'))
-        .map(input => input.nextElementSibling.textContent.trim());
-    const selectedPrice = document.querySelector('.filter-container input[type="radio"]:checked');
+        // Kiểm tra điều kiện lọc
+        let showProduct = true;
 
-    // Lọc sản phẩm theo thương hiệu
-    const filteredProducts = products.filter(product => {
-        const brandMatch = selectedBrands.length === 0 || selectedBrands.includes(product.brand);
-        const priceMatch = !selectedPrice || (selectedPrice.value === "Dưới 1 triệu" && product.price < 1000000) ||
-                           (selectedPrice.value === "1 - 3 triệu" && product.price >= 1000000 && product.price <= 3000000) ||
-                           (selectedPrice.value === "Trên 3 triệu" && product.price > 3000000);
-        return brandMatch && priceMatch;
+        // Kiểm tra giá
+        if (priceFilters.length > 0) {
+            showProduct = priceFilters.some(filter => {
+                if (filter === 'under-500000' && productPrice < 500000) return true;
+                if (filter === '500000-1000000' && productPrice >= 500000 && productPrice < 1000000) return true;
+                if (filter === '1000000-2000000' && productPrice >= 1000000 && productPrice < 2000000) return true;
+                if (filter === '2000000-3000000' && productPrice >= 2000000 && productPrice < 3000000) return true;
+                if (filter === 'above-3000000' && productPrice >= 3000000) return true;
+                return false;
+            });
+        }
+
+        // Kiểm tra thương hiệu
+        if (showProduct && brandFilters.length > 0) {
+            showProduct = brandFilters.some(brand => productTitle.includes(brand));
+        }
+
+        // Hiện hoặc ẩn sản phẩm
+        product.style.display = showProduct ? 'block' : 'none';
+        
+        // Kiểm tra xem có sản phẩm nào được hiển thị không
+        if (showProduct) {
+            anyProductVisible = true;
+        }
     });
 
-    // Cập nhật giao diện với sản phẩm đã lọc
-    updateProductDisplay(filteredProducts);
-}
+    // Hiển thị thông báo nếu không có sản phẩm nào được tìm thấy
+    const noResults = document.querySelector('.no-results');
+    if (!anyProductVisible) {
+        noResults.style.display = 'block'; // Hiện thông báo không tìm thấy kết quả
+    } else {
+        noResults.style.display = 'none'; // Ẩn thông báo nếu có sản phẩm
+    }
 
-// Hàm cập nhật hiển thị sản phẩm
-function updateProductDisplay(filteredProducts) {
-    const productList = document.querySelector('.products-list');
-    productList.innerHTML = ''; // Xóa danh sách hiện tại
-
-    filteredProducts.forEach(product => {
-        const productElement = document.createElement('div');
-        productElement.className = 'product';
-        productElement.innerHTML = `
-            <img src="${product.image}" alt="${product.name}" class="product-image">
-            <h4 class="product-title">${product.name}</h4>
-            <p>Giá: ${product.price.toLocaleString()} VND</p>
-        `;
-        productList.appendChild(productElement);
+    // Cuộn về đầu trang
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // Cuộn mượt mà
     });
-}
-
-// Lắng nghe sự kiện cho nút áp dụng bộ lọc
-document.querySelector('.apply-filters').addEventListener('click', filterProducts);
+});
